@@ -393,7 +393,7 @@ class TileLayer(object):
             for x in range(int(self.width)):
                 output += str(self.decoded_content[num])
                 num += 1
-            print output
+            print(output)
 
     def convert(self):
         self.opacity = float(self.opacity)

@@ -1,3 +1,4 @@
+import tmxreader
 import random, copy, math, os, pygame, sys, player, AI, tiledtmxloader, MENU
 from pygame.locals import *
 
@@ -421,11 +422,11 @@ def runGame(MAP_NUMBER):
 
 
         if check_game_end(p,step_x,step_y,sprite_layers[DEATH_LAYER]):
-            print 'Collided with death layer'
+            print('Collided with death layer')
         elif check_game_end(p,step_x,step_y,sprite_layers[WIN_LAYER]):
-            print 'Collided with win layer'
+            print('Collided with win layer')
         elif p.get_rect().left <= (cam_x-HALF_WINWIDTH):
-            print 'Collided with left end of screen'
+            print('Collided with left end of screen')
         step_x, step_y = check_collision(p,step_x,step_y,sprite_layers[COLL_LAYER])
 
 
@@ -698,7 +699,7 @@ def check_collision(player,step_x,step_y,coll_layer):
             player.change_sprite(IMAGESDICT['player'])
             player.onGround = True;
         else:
-            print 'Collision detected, not ground, not jumping'
+            print('Collision detected, not ground, not jumping')
         res_step_y = 0
     elif rect.move(0, 0).collidelist(tile_rects) > -1:
         # Force the player to move up if stuck in an object
