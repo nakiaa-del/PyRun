@@ -46,7 +46,7 @@ __author__ = u'DR0ID @ 2009-2011'
 
 import sys
 from xml.dom import minidom, Node
-import StringIO
+from io import StringIO
 import os.path
 import struct
 import array
@@ -571,7 +571,7 @@ def printer(obj, ident=''):
                     print(ident + u'data = ')
                     printer(elem, ident + '    ')
                 else:
-                    print ident + u'%s\t= %s' % (name, getattr(obj, name))
+                    print(ident + u'%s\t= %s' % (name, getattr(obj, name)))
     for objt_list in lists:
         for _obj in objt_list:
             printer(_obj, ident + '    ')
