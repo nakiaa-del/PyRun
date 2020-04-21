@@ -558,7 +558,7 @@ def printer(obj, ident=''):
     Helper function, prints a hirarchy of objects.
     """
     import inspect
-    print ident + obj.__class__.__name__.upper()
+    print(ident + obj.__class__.__name__.upper())
     ident += '    '
     lists = []
     for name in dir(obj):
@@ -568,7 +568,7 @@ def printer(obj, ident=''):
         elif not inspect.ismethod(elem):
             if not name.startswith('__'):
                 if name == u'data' and elem:
-                    print ident + u'data = '
+                    print(ident + u'data = ')
                     printer(elem, ident + '    ')
                 else:
                     print ident + u'%s\t= %s' % (name, getattr(obj, name))
